@@ -1,0 +1,5 @@
+<if condition='$vo.status==1'>
+<a target="_ajax" title="点击锁定" href="{url f='status' id='$vo.id' status='0'}"><img src="./images/status_1.gif" width="14" height="14" alt="启用" /></a>
+<else />
+<a target="_ajax" title="点击启用" href="{url f='status' id='$vo.id' status='1'}"><img src="./images/status_0.gif" width="14" height="14" alt="锁定" /></a>
+</if>

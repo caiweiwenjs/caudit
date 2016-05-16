@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>审核管理</title>
+<link rel="stylesheet" href="./css/style.css" type="text/css" />
+<script type="text/javascript" src="./js/jquery.js"></script>
+<script type="text/javascript" src="./js/jquery.form.js"></script>
+<script type="text/javascript" src="./js/ajaxsubmit.js"></script>
+<script type="text/javascript" src="./js/fun.js"></script>
+<script type="text/javascript" src="./js/list.js"></script>
+</head>
+
+<body>
+<div class="wrap">
+  <div class="search">
+  <form action="{url do='search'}" method="post">
+     状态：
+     <input type="text" name="search_where[status][like]" size="12" value="{$search_where.status.like}" class="input" />  
+     用户名：
+     <input type="text" name="search_where[user_name][like]" size="12" value="{$search_where.user_name.like}" class="input" />
+    打印机名：
+	<input type="text" name="search_where[printer_name][like]" size="12" value="{$search_where.printer_name.like}" class="input" />
+	标题：
+	<input type="text" name="search_where[title][like]" size="12" value="{$search_where.title.like}" class="input" />
+	份数：
+	<input type="text" name="search_where[copies][like]" size="12" value="{$search_where.copies.like}" class="input" />
+	提交时间：
+	<input type="text" name="search_where[submit_time][like]" size="12" value="{$search_where.submit_time.like}" class="input" />
+    <input type="submit" class="btn_s" value="查 询" />
+  </form>
+  </div>
+  <form action="" method="post" id="form_data_list">
+  <table cellspacing="1" class="mylist">
+    <thead>
+    <tr>
+      <th colspan="9"><div class="relative">打印请求列表
+	  </div></th>
+    </tr>
+    <tr class="mylist_title">
+      <td width="28" ><input type="checkbox" class="checkbox" onclick="InverSelect();" /></td>
+	  <td width="80" >状 态</td>
+      <td>用户名</td>
+      <td>打印机名</td>
+	  <td>标 题</td>
+      <td width="50">份 数</td>
+	  <td width="140">提交时间</td>
+	  <td width="80">审 核</td>
+      <td width="102">操 作</td>
+    </tr>
+    </thead>
+    <tbody>
+    <foreach name='$list' id='vo'>
+    <tr class="datalist">
+      <td align="center"><input name="id[]" type="checkbox" value="{$vo.id}" class="checkbox" /></td>
+      <td align="center">{$vo.status}</td>
+      <td align="center">{$vo.user_name}</td>
+	  <td align="center">{$vo.printer_name}</td>
+	  <td align="center">{$vo.title}</td>
+	  <td align="center">{$vo.copies}</td>
+	  <td align="center">{$vo.submit_time}</td>
+	  <td align="center"><include file="Common_status.html" /></td>
+      <td align="center" class="action"><a class="win_big" href="{url f='view' id='$vo.id'}" title="查看PDF文件"><img src="./images/view.gif" alt="查看PDF文件" width="16" height="16" /></a></td>
+    </tr>
+    </foreach>
+    </tbody>
+  </table>
+  <div class="mylist_foot">
+    <include file="Common_action2_for_audit.html" />
+    <div class="page fr">{$page}</div>
+  </div>
+  </form>
+</div>
+</body>
+</html>

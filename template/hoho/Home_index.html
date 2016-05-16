@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{__APP_TITLE__}</title>
+<link rel="stylesheet" href="./css/panel.css" type="text/css" />
+<link rel="stylesheet" path="./css/" type="text/css" id="skinCss" />
+<link rel="stylesheet" path="./js/artDialog/skins/" type="text/css" id="artDialogCss" />
+<script type="text/javascript" src="./js/jquery.js"></script>
+<script type="text/javascript" src="./js/panel.js"></script>
+<script type="text/javascript" src="./js/artDialog/jquery.artDialog.js"></script>
+<script type="text/javascript" src="./js/artDialog/plugins/iframeTools.js"></script>
+</head>
+
+<body>
+<div id="left">
+    <div class="logo"></div>
+    <div class="menu">
+        <ul class="main">
+            <foreach name="$menu" id="parent">
+            <li class="main">
+                <a href="javascript:void(0);" class="main"><i class="iconfont">{$icon[$parent[id]]}</i>{$parent.menu_name}</a>
+                <notempty name="$parent._child">
+                <ul class="sub">
+                    <foreach name='$parent._child' id='child'>
+                    <li class="sub"><a target="_tab" rel="menu_{$child.id}" href="{~U($child.menu_url)}" class="sub">{$child.menu_name}</a></li>
+                    </foreach>
+                </ul>
+                </notempty>
+            </li>
+            </foreach>
+         </ul>
+    </div>
+</div>
+<div id="right">
+    <div id="top">
+        <p class="sideBarSwitch"><a href="javascript:void(0);" onclick="sideBarSwitch(this);"><i class="ico icon-arrow-left"></i>隐藏左栏菜单</a></p>
+        <ul class="topLinks">
+            <li><a target="_dialog" rel="cache" width="680" height="380" href="{url f='cache'}" title="清空缓存"><i class="iconfont">&#xf028b;</i>清空缓存</a></li>
+            <li>｜</li>
+            <li><a target="_dialog" width="480" height="280" rel="pwd" href="{url a='AdminUser' f='changePwd'}" title="修改密码"><i class="iconfont">&#xf00ee;</i>修改密码</a></li>
+            <li>｜</li>
+            <li><a href="javascript:void(0);"><i class="iconfont fl">&#xf00ec;</i>{$session.uname}</a></li>
+            <li>｜</li>
+            <li><a href="{url a='User' f='logout'}"><i class="iconfont">&#xf017c;</i>退出</a></li>
+        </ul>
+        <p class="skin">
+            <span>选择风格：</span>
+            <a class="blue" href="javascript:void(0);" onclick="setSkin('blue');">blue</a>
+            <a class="red" href="javascript:void(0);" onclick="setSkin('red');">red</a>
+            <a class="black" href="javascript:void(0);" onclick="setSkin('black');">black</a>
+        </p>
+    </div>
+    <div id="tab">
+        <span id="tab_home" class="on" onclick="changeTab('home');"><i class="iconfont">&#x344c;</i>我的主页</span>
+    </div>
+    <div id="content">
+        <iframe id="content_home" frameborder="0" allowtransparency="true" src="{url f='right'}"></iframe>
+    </div>
+</div>
+</body>
+</html>

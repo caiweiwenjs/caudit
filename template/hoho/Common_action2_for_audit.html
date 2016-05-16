@@ -1,0 +1,8 @@
+<div class="fl" style="margin-left:10px;_margin-left:5px;"><img src="./images/arrow.gif" width="26" height="30" alt="请选择" />
+<a href="javascript:allSelect()"> 全选</a> | <a href="javascript:InverSelect()">反选</a> | <a href="javascript:allUnSelect()">全不选</a> | 对选中项进行
+<select onchange="selectSubmit(this,'form_data_list')">
+    <option>请选择</option>
+    <option value="{url f='status' status='1'}">通过</option>
+    <option value="{url f='status' status='0'}">回绝</option>
+</select>
+</div>

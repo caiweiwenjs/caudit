@@ -1,0 +1,10 @@
+#left{background:#6F2D2D;}
+ #left .logo{background:url(../images/red/logo.jpg) center center;}
+ #left .menu ul.main{border-top:1px solid #661D1D;border-bottom:1px solid #7B3E3E;}
+ #left .menu ul.sub{background:#532424;border-top:1px solid #7B3E3E;}
+ #left .menu a.main{color:#AAA;border-top:1px solid #7B3E3E;border-bottom:1px solid #661D1D;}
+ #left .menu a.main:hover{background:#7D3434;}
+ #left .menu a.sub{background:#532424;border-top:1px solid #431F1F;border-bottom:1px solid #5D2B2B;color:#777;}
+ #left .menu a.sub:hover{color:#CCC;background:#5D2B2B;}
+
+#top{background:url(../images/red/topBg.jpg);}

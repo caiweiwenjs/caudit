@@ -1,0 +1,23 @@
+*{margin:0;padding:0;outline:none;}
+body{font:12px/18px Verdana,Arial,Helvetica,sans-serif;background:#444;color:#DDD;}
+li{list-style:none;}
+img{border:none;}
+.cl{clear:both;}
+
+#header{height:80px;padding-top:88px;background:#2A2A2A;border-bottom:1px solid #4E4E4E;}
+#header a{display:block;width:200px;height:80px;margin:0 auto;}
+#main{border-top:1px solid #393939;}
+#main form{height:250px;width:400px;margin:0 auto;position:relative;overflow:hidden;}
+#main form label{position:absolute;left:128px;line-height:29px;cursor:text;color:#999;z-index:12;}
+#main form .input{background-image:url(../images/log_input.gif);padding-left:38px;font-weight:bold;width:194px;height:29px;line-height:29px;border:none;border:0;color:#666;position:absolute;left:90px;z-index:11;}
+#pwd{background-position:0 -29px;}
+#verify{background-position:0 -58px;}
+#main form input.focus{font-size:16px;}
+#uname,#uname_txt{top:28px;}
+#pwd,#pwd_txt{top:72px;}
+#verify,#verify_txt{top:116px;}
+#main form #verify_img{position:absolute;top:118px;left:238px;}
+#main form .remember{position:absolute;top:166px;left:154px;line-height:14px;}
+#main form .remember input{width:13px;height:13px;margin:0 3px;float:left;}
+#main form input.submit{position:absolute;top:192px;left:154px;}
+#footer{text-align:center;}

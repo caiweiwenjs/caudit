@@ -1,0 +1,60 @@
+*{margin:0;padding:0;font-size:12px;line-height:150%;}
+html{_overflow-y:scroll;}
+body{background:transparent;font-family:"宋体";}
+h3{font-size:14px;line-height:33px;}
+a{color:#666;text-decoration:none;}
+a:hover{color:#600;text-decoration: underline;}
+img{border:0;}
+li{list-style:none;}
+input,textarea,select{border:1px solid #999;}
+.myform input,.myform textarea,.myform select{margin-left:5px;}
+input{height:20px;line-height:20px;}
+input.editnow{margin:0;}
+.input{padding:0 2px;}
+.fr{float:right;}
+.fl{float:left;}
+.cl{clear:both;}
+.relative{position:relative;}
+.wrap{width:99%;margin:0 auto;margin-bottom:16px;overflow:hidden;}
+.btn{background:url(../images/btn.gif);height:26px;width:77px;color:#333;font-size:13px;border:none;cursor:pointer}
+.btn_s{background:url(../images/btn_s.gif);height:20px;width:58px;color:#333;border:none;cursor:pointer;margin-left:12px;}
+.add_btn{display:block;width:40px;background:url(../images/add_bg.gif) no-repeat 5px center;padding:5px 10px 5px 20px;border:1px solid #CCC;background-color:#FFF;position:absolute;top:3px;right:20px;}
+.add_btn a{text-decoration:none;color:#F00;}
+.add_btn a:hover{color:#C00;}
+.checkbox{border:none;}
+.search {background:#EEE;border:1px solid #CCC;border-bottom:1px solid #FFF;border-top:none;padding:10px 0;text-align:center;}
+.mylist,.myform{width:100%;border-spacing:1px;_border-collapse:collapse;*border-collapse:collapse;background:#CDCDCD;}
+.mylist tr,.myform tr{background:#FFF;}
+.mylist th,.myform th{height:36px;line-height:36px;border:1px solid #FFF;background:#EEE;color:#666;font-size:14px;}
+.mylist th .relative{height:36px;line-height:36px;text-align:left;padding-left:12px;font-weight:bold;color:#666;font-size:14px;}
+.mylist th .buttons{position:absolute;right:12px;top:3px;}
+.mylist th .buttons a{display:block;float:left;margin:0 7px 0 0;background:#f5f5f5;border:1px solid #DDD;line-height:130%;text-decoration:none;font-weight:bold;padding:5px 10px 6px 7px;font-family: "Lucida Grande",Tahoma,Arial,Verdana,sans-serif;}
+.mylist th .buttons  a.blue{color:#336699;}
+.mylist th .buttons  a.blue:hover{background:#dff4ff;border:1px solid #c2e1ef;color:#336699;}
+.mylist th .buttons  a.green{color:#529214;}
+.mylist th .buttons  a.green:hover{background-color:#E6EFC2;border:1px solid #C6D880;color:#529214;}
+.mylist th .buttons  a.red{color:#d12f19;}
+.mylist th .buttons  a.red:hover{background:#fbe3e4;border:1px solid #fbc2c4;color:#d12f19;}
+.mylist th .buttons a img{margin:0 3px -3px 0 !important;width:16px;height:16px;}
+.mylist td,.myform td{border:1px solid #FFF;height:26px;padding:0 3px;}
+.mylist_title td{color:#3D3D3D;background:#E6EEEE;font-weight:bold;text-align:center;}
+.mylist td.action a{margin:3px;display:inline-block;}
+.mylist_head{color:#666;background:#EEE;border-right:1px solid #CDCDCD;border-left:1px solid #CDCDCD;border-top:1px solid #FFF;border-bottom:1px solid #FFF;height:36px;line-height:36px;padding-left:12px;font-size:14px;font-weight:bold;}
+.mylist_foot{border:1px solid #CDCDCD;border-top:none;height:38px;background:#FFF;}
+.myform td{padding:2px 10px;height:28px;line-height:28px;}
+.myform .tips{padding-left:12px;color:#666;}
+.mylist .even{background:#FFFFFF;}
+.mylist .odd{background:#F0F0F0;}
+.mylist .hover{background:#DEF7FE;}
+.page{color:#A0A0A0;font-weight:bold;padding-right:28px;text-align:right;margin:8px auto;}
+.page a{border:1px solid #CCCCCC;color: #A0A0A0;display:inline-block;font-weight:bold;padding:2px 5px;text-decoration:none;}
+.page a:hover{color:#F90;}
+.page span{background:#A0A0A0;border:1px solid #CCCCCC;color:#FFFFFF;display:inline-block;padding:2px 8px;}
+.list_title{border-bottom:1px solid #FFF;margin-top:10px;}
+.list_title p{font-size:14px;font-weight:bold;color:#333;line-height:38px;padding-left:10px;}
+ul.list{border-bottom:1px solid #DDD;}
+ul.list li{border-top:1px solid #DDD;border-bottom:1px solid #FFF;padding:5px 0 8px 5px;}
+ul.list li font{display:inline-block;}
+ul.list li font.title{width:200px;}
+ul.list .tips{padding-left:12px;color:#666;}
+.ajax_tips{background:url(../images/info.gif) 5px center no-repeat;}

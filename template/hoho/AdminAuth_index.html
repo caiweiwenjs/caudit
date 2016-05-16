@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>后台权限列表</title>
+<link rel="stylesheet" href="./css/style.css" type="text/css" />
+<script type="text/javascript" src="./js/jquery.js"></script>
+<script type="text/javascript" src="./js/jquery.form.js"></script>
+<script type="text/javascript" src="./js/ajaxsubmit.js"></script>
+<script type="text/javascript" src="./js/fun.js"></script>
+<script type="text/javascript" src="./js/list.js"></script>
+</head>
+
+<body>
+<div class="wrap">
+  <form action="" method="post" id="form_data_list">
+  <table cellspacing="1" class="mylist">
+    <thead>
+    <tr>
+      <th colspan="9">
+      <div class="relative">后台权限列表
+        <div class="buttons">
+            <a class="_add blue" href="{url f='add'}" title="新增">
+                <img src="./images/add.gif" alt="新增" width="16" height="16" /> 新增
+            </a>
+        </div>
+      </div></th>
+    </tr>
+    <tr class="mylist_title">
+      <td width="28"><input type="checkbox" class="checkbox" onclick="InverSelect();" /></td>
+      <td width="108">权限名称</td>
+      <td>所属Action名称</td>
+      <td>所属Action方法</td>
+      <td width="82">菜单名称</td>
+      <td>菜单地址</td>
+      <td width="40">排序</td>
+      <td width="42">状 态</td>
+      <td width="68">操 作</td>
+    </tr>
+    </thead>
+    <tbody>
+    <foreach name='$list' id='vo'>
+    <tr class="datalist">
+      <td align="center"><input name="id[]" type="checkbox" value="{$vo.id}" class="checkbox" /></td>
+      <td dataType="require" style="font-weight:bold;" onclick="editNow({$vo.id},'title','{url f='update'}',this);"> {$vo.title}</td>
+      <td onclick="editNow({$vo.id},'auth_action','{url f='update'}',this);">{$vo.auth_action}</td>
+      <td onclick="editNow({$vo.id},'auth_fun','{url f='update'}',this);">{$vo.auth_fun}</td>
+      <td style="font-weight:bold;" onclick="editNow({$vo.id},'menu_name','{url f='update'}',this);">{$vo.menu_name}</td>
+      <td onclick="editNow({$vo.id},'menu_url','{url f='update'}',this);">{$vo.menu_url}</td>
+      <td onclick="editNow({$vo.id},'orderid','{url f='update'}',this);">{$vo.orderid}</td>
+      <td align="center"><include file="Common_status.html" /></td>
+      <td align="center" class="action"><include file="Common_action.html" /></td>
+    </tr>
+    <foreach name='$vo._child' id='vo'>
+    <tr class="datalist">
+      <td align="center"><input name="id[]" type="checkbox" value="{$vo.id}" class="checkbox" /></td>
+      <td dataType="require" style="padding-left:12px;" onclick="editNow({$vo.id},'title','{url f='update'}',this);"> {$vo.title}</td>
+      <td onclick="editNow({$vo.id},'auth_action','{url f='update'}',this);">{$vo.auth_action}</td>
+      <td onclick="editNow({$vo.id},'auth_fun','{url f='update'}',this);">{$vo.auth_fun}</td>
+      <td onclick="editNow({$vo.id},'menu_name','{url f='update'}',this);">{$vo.menu_name}</td>
+      <td onclick="editNow({$vo.id},'menu_url','{url f='update'}',this);">{$vo.menu_url}</td>
+      <td onclick="editNow({$vo.id},'orderid','{url f='update'}',this);">{$vo.orderid}</td>
+      <td align="center"><include file="Common_status.html" /></td>
+      <td align="center" class="action"><include file="Common_action.html" /></td>
+    </tr>
+    </foreach>
+    </foreach>
+    </tbody>
+  </table>
+  <div class="mylist_foot">
+    <include file="Common_action2.html" />
+  </div>
+  </form>
+</div>
+</body>
+</html>
