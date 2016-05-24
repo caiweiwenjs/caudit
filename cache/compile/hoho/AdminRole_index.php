@@ -53,12 +53,24 @@
       <td align="center"><input name="id[]" type="checkbox" value="<?php echo $vo['id'];?>" class="checkbox" /></td>
       <td dataType="require" onclick="editNow(<?php echo $vo['id'];?>,'title','admin.php?a=AdminRole&f=update',this);"><?php echo $vo['title'];?></td>
       <td onclick="editNow(<?php echo $vo['id'];?>,'description','admin.php?a=AdminRole&f=update',this);"><?php echo $vo['description'];?></td>
-      <td align="center"><?php if($vo['status']==1){ ?>
-<a target="_ajax" title="点击锁定" href="<?php echo U(array('f'=>"status",'id'=>"{$vo['id']}",'status'=>"0")); ?>"><img src="./template/hoho/images/status_1.gif" width="14" height="14" alt="启用" /></a>
+      <td align="center"><?php if($vo['status']==0){ ?>
+<a target="_ajax" href="<?php echo U(array('f'=>"status",'id'=>"{$vo['id']}",'status'=>"1")); ?>" confirm="确认通过请求？" title="审核">
+    <img src="./template/hoho/images/status_1.gif" width="14" height="14" alt="通过" />
+</a>
+<a target="_ajax" href="<?php echo U(array('f'=>"status",'id'=>"{$vo['id']}",'status'=>"2")); ?>" confirm="确认回绝请求？" title="审核">
+    <img src="./template/hoho/images/status_0.gif" width="14" height="14" alt="回绝" />
+</a>
 <?php }else{ ?>
-<a target="_ajax" title="点击启用" href="<?php echo U(array('f'=>"status",'id'=>"{$vo['id']}",'status'=>"1")); ?>"><img src="./template/hoho/images/status_0.gif" width="14" height="14" alt="锁定" /></a>
+<label style="color: gray">
+    已审核
+</label>
 <?php } ?></td>
-      <td align="center" class="action"><a class="win_normal" href="<?php echo U(array('f'=>"auth",'role_id'=>"{$vo['id']}")); ?>" title="授权"><img src="./template/hoho/images/auth.gif" alt="授权" width="16" height="16" /></a><a class="_edit" href="<?php echo U(array('f'=>"edit",'id'=>"{$vo['id']}")); ?>" title="编辑"><img src="./template/hoho/images/edit.gif" alt="编辑" width="16" height="16" /></a><a target="_ajax" href="<?php echo U(array('f'=>"delete",'id'=>"{$vo['id']}")); ?>" confirm="确认删除？删除后无法恢复！！" title="删除"><img src="./template/hoho/images/delete.gif" alt="删除" width="16" height="16" /></a></td>
+      <td align="center" class="action"><a class="win_normal" href="<?php echo U(array('f'=>"auth",'role_id'=>"{$vo['id']}")); ?>" title="授权"><img src="./template/hoho/images/auth.gif" alt="授权" width="16" height="16" /></a><a class="_edit" href="<?php echo U(array('f'=>"edit",'id'=>"{$vo['id']}")); ?>" title="编辑">
+    <img src="./template/hoho/images/edit.gif" alt="编辑" width="16" height="16" />
+</a>
+<a target="_ajax" href="<?php echo U(array('f'=>"delete",'id'=>"{$vo['id']}")); ?>" confirm="确认删除？删除后无法恢复！！" title="删除">
+    <img src="./template/hoho/images/delete.gif" alt="删除" width="16" height="16" />
+</a></td>
     </tr>
     <?php } } ?>
     </tbody>

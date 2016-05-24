@@ -54,16 +54,39 @@
     <?php if(is_array($list)){foreach($list as $key=>$vo){?>
     <tr class="datalist">
       <td align="center"><input name="id[]" type="checkbox" value="<?php echo $vo['id'];?>" class="checkbox" /></td>
-      <td align="center"><?php echo $vo['status'];?></td>
+			<?php if($vo['status']==0){ ?>
+				<td align="center" style="color:blue">新提交</td>
+			<?php }else{ ?>
+				<?php if($vo['status']==1){ ?>
+					<td align="center" style="color:green" >通过</td>
+				<?php }else{ ?>
+					<?php if($vo['status']==2){ ?>
+						<td align="center" style="color:red">回绝</td>
+					<?php }else{ ?>
+						<?php if($vo['status']==3){ ?>
+							<td align="center" style="color:green">打印完成</td>
+						<?php }else{ ?>
+							<td align="center" style="color:red">打印失败</td>
+						<?php } ?>
+					<?php } ?>
+				<?php } ?>
+			<?php } ?>
       <td align="center"><?php echo $vo['user_name'];?></td>
 	  <td align="center"><?php echo $vo['printer_name'];?></td>
 	  <td align="center"><?php echo $vo['title'];?></td>
 	  <td align="center"><?php echo $vo['copies'];?></td>
 	  <td align="center"><?php echo $vo['submit_time'];?></td>
-	  <td align="center"><?php if($vo['status']==1){ ?>
-<a target="_ajax" title="点击锁定" href="<?php echo U(array('f'=>"status",'id'=>"{$vo['id']}",'status'=>"0")); ?>"><img src="./template/hoho/images/status_1.gif" width="14" height="14" alt="启用" /></a>
+	  <td align="center"><?php if($vo['status']==0){ ?>
+<a target="_ajax" href="<?php echo U(array('f'=>"status",'id'=>"{$vo['id']}",'status'=>"1")); ?>" confirm="确认通过请求？" title="审核">
+    <img src="./template/hoho/images/status_1.gif" width="14" height="14" alt="通过" />
+</a>
+<a target="_ajax" href="<?php echo U(array('f'=>"status",'id'=>"{$vo['id']}",'status'=>"2")); ?>" confirm="确认回绝请求？" title="审核">
+    <img src="./template/hoho/images/status_0.gif" width="14" height="14" alt="回绝" />
+</a>
 <?php }else{ ?>
-<a target="_ajax" title="点击启用" href="<?php echo U(array('f'=>"status",'id'=>"{$vo['id']}",'status'=>"1")); ?>"><img src="./template/hoho/images/status_0.gif" width="14" height="14" alt="锁定" /></a>
+<label style="color: gray">
+    已审核
+</label>
 <?php } ?></td>
       <td align="center" class="action"><a class="win_big" href="<?php echo U(array('f'=>"view",'id'=>"{$vo['id']}")); ?>" title="查看PDF文件"><img src="./template/hoho/images/view.gif" alt="查看PDF文件" width="16" height="16" /></a></td>
     </tr>
@@ -76,7 +99,7 @@
 <select onchange="selectSubmit(this,'form_data_list')">
     <option>请选择</option>
     <option value="admin.php?a=AuditManagement&f=status&status=1">通过</option>
-    <option value="admin.php?a=AuditManagement&f=status&status=0">回绝</option>
+    <option value="admin.php?a=AuditManagement&f=status&status=2">回绝</option>
 </select>
 </div>
     <div class="page fr"><?php echo $page;?></div>

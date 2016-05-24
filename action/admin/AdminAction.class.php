@@ -216,12 +216,13 @@ class AdminAction extends Action{
     public function status(){
         $table=$this->get_table();
         $id = $this->get_id();
-        $data['status']=$_GET['status']==1 ? 1 : 0;
+        $data['status']=$_GET['status'];//==1 ? 1 : 0;
         $msg = '设置成功！';
         $type = 'refresh';
         $err = 0;
         foreach($id as $v){
             $where['id']=(int)$v;
+            $where['status'] = 0; //状态为新提交才能审核
             $result = $this->db->table($table)->where($where)->data($data)->update();
             if(!$result>0){
                 $err++;

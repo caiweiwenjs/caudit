@@ -53,7 +53,23 @@
     <foreach name='$list' id='vo'>
     <tr class="datalist">
       <td align="center"><input name="id[]" type="checkbox" value="{$vo.id}" class="checkbox" /></td>
-      <td align="center">{$vo.status}</td>
+			<if condition='$vo.status==0'>
+				<td align="center" style="color:blue">新提交</td>
+			<else />
+				<if condition='$vo.status==1'>
+					<td align="center" style="color:green" >通过</td>
+				<else />
+					<if condition='$vo.status==2'>
+						<td align="center" style="color:red">回绝</td>
+					<else />
+						<if condition='$vo.status==3'>
+							<td align="center" style="color:green">打印完成</td>
+						<else />
+							<td align="center" style="color:red">打印失败</td>
+						</if>
+					</if>
+				</if>
+			</if>
       <td align="center">{$vo.user_name}</td>
 	  <td align="center">{$vo.printer_name}</td>
 	  <td align="center">{$vo.title}</td>

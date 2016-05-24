@@ -48,7 +48,12 @@
       <td align="center"><input name="id[]" type="checkbox" value="<?php echo $vo['id'];?>" class="checkbox" /></td>
       <td align="center"><?php echo $vo['user_name'];?></td>
       <td align="center"><?php echo $vo['printer_name'];?></td>
-      <td align="center" class="action"><a class="_edit" href="<?php echo U(array('f'=>"edit",'id'=>"{$vo['id']}")); ?>" title="编辑"><img src="./template/hoho/images/edit.gif" alt="编辑" width="16" height="16" /></a><a target="_ajax" href="<?php echo U(array('f'=>"delete",'id'=>"{$vo['id']}")); ?>" confirm="确认删除？删除后无法恢复！！" title="删除"><img src="./template/hoho/images/delete.gif" alt="删除" width="16" height="16" /></a></td>
+      <td align="center" class="action"><a class="_edit" href="<?php echo U(array('f'=>"edit",'id'=>"{$vo['id']}")); ?>" title="编辑">
+    <img src="./template/hoho/images/edit.gif" alt="编辑" width="16" height="16" />
+</a>
+<a target="_ajax" href="<?php echo U(array('f'=>"delete",'id'=>"{$vo['id']}")); ?>" confirm="确认删除？删除后无法恢复！！" title="删除">
+    <img src="./template/hoho/images/delete.gif" alt="删除" width="16" height="16" />
+</a></td>
     </tr>
     <?php } } ?>
     </tbody>

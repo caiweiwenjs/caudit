@@ -1,5 +1,12 @@
-<if condition='$vo.status==1'>
-<a target="_ajax" title="点击锁定" href="{url f='status' id='$vo.id' status='0'}"><img src="./images/status_1.gif" width="14" height="14" alt="启用" /></a>
+<if condition='$vo.status==0'>
+<a target="_ajax" href="{url f='status' id='$vo.id' status='1'}" confirm="确认通过请求？" title="审核">
+    <img src="./images/status_1.gif" width="14" height="14" alt="通过" />
+</a>
+<a target="_ajax" href="{url f='status' id='$vo.id' status='2'}" confirm="确认回绝请求？" title="审核">
+    <img src="./images/status_0.gif" width="14" height="14" alt="回绝" />
+</a>
 <else />
-<a target="_ajax" title="点击启用" href="{url f='status' id='$vo.id' status='1'}"><img src="./images/status_0.gif" width="14" height="14" alt="锁定" /></a>
+<label style="color: gray">
+    已审核
+</label>
 </if>

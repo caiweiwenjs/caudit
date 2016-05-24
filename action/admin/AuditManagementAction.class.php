@@ -13,7 +13,7 @@ class AuditManagementAction extends AdminAction{
         $table=$this->get_table();
         $id=(int)$_GET['id'];
         $vo=$this->db->table($table)->where('id='.$id)->find($id);
-        $this->assign('file_path',$vo['file_path']);
+        $this->assign('file_path', './pdf/'.$vo['file_path']);
         $this->display();
     }
 	/*
